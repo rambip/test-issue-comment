@@ -5,7 +5,6 @@ on:
 jobs:
   name: "Log reactions"
   steps:
-  steps:
     - run: |
         echo A comment on PR $NUMBER
       env:
