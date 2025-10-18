@@ -3,9 +3,11 @@ on:
     types: [created, updated, deleted]
 
 jobs:
-  name: "Log reactions"
-  steps:
-    - run: |
-        echo A comment on PR $NUMBER
-      env:
-        REACTIONS: ${{ github.event.issue.reactions }}
+  reactions:
+    name: "Log-reactions"
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo A comment on PR $NUMBER
+        env:
+          REACTIONS: ${{ github.event.issue.reactions }}
